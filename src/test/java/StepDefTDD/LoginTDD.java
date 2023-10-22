@@ -48,5 +48,6 @@ public class LoginTDD {
 	@Then ("I verify login result")
 	public void user_verify_success_login_result(){
 		driver.findElement(By.xpath("//div[contains(text(),'Swag Labs')]"));
+		driver.close();
 	}
 }

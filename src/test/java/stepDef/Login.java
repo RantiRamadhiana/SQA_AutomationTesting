@@ -1,9 +1,14 @@
 package stepDef;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.io.FileUtils;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -36,7 +41,7 @@ public class Login {
 	
 	@When("Input username")
 	public void user_input_tdd_selenium_as_username1(){
-		driver.findElement(By.id("user-name")).sendKeys("standard_user");
+		driver.findElement(By.id("user-name")).sendKeys("performance_glitch_user");
 	}
 	
 	@And("Input Password")
@@ -50,8 +55,11 @@ public class Login {
 	}
 	
 	@Then ("user in on dashboard page")
-	public void user_verify_success_login_result1(){	
+	public void user_verify_success_login_result1() throws IOException{	
 		driver.findElement(By.xpath("//div[contains(text(),'Swag Labs')]"));
+		File srcFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        FileUtils.copyFile(srcFile, new File(System.getProperty("user.dir") + "/src/test/java/sukseslogin.png"));
+        driver.close();
 	}
 	
 	@And("Input Invalid Password")
@@ -60,7 +68,24 @@ public class Login {
 	}
 	
 	@Then("user get error message")
-	public void userGetErrorMessage1(){
-		
+	public void userGetErrorMessage1() throws IOException{
+		File srcFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        FileUtils.copyFile(srcFile, new File(System.getProperty("user.dir") + "/src/test/java/gagallogin.png"));
+		driver.close();
+	}
+	
+	@When("Input username locked out user")
+	public void inputlockeoutuser(){
+		driver.findElement(By.id("user-name")).sendKeys("locked_out_user");
+	}
+	
+	@And("Input password locked out user")
+	public void user_input_lockedout_password1(){
+		driver.findElement(By.id("password")).sendKeys("secret_sauce");
+	}
+	
+	@Then("user get alert message")
+	public void userGetalertMessage1(){
+		driver.close();
 	}
 }
