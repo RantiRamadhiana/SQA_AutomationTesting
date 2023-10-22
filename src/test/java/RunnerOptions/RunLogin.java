@@ -10,7 +10,7 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
 		features="src/test/java/features",
 		glue = "cucumber.stepDefTDD",
-		plugin = {"html:target/HTML_report.html"},
+		plugin = {"html:target/HTML_report.html","json:target/JSON_report.json", "junit:target/XML_report.xml"},
 		tags = "@TDD"
 		
 		)

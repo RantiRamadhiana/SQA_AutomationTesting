@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="6" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="6" time="0.199">
+<testcase classname="Log in to the application" name="Success Login" time="0.063">
+<failure message="The scenario has pending or undefined step(s)" type="java.lang.Exception"><![CDATA[Given user is on login page.................................................undefined
+When Input username.........................................................skipped
+And Input Password..........................................................skipped
+And user login button click.................................................skipped
+Then user in on dashboard page..............................................skipped
+]]></failure>
+</testcase>
+<testcase classname="Log in to the application" name="Failed Login" time="0.001">
+<failure message="The scenario has pending or undefined step(s)" type="java.lang.Exception"><![CDATA[Given user is on login page.................................................undefined
+When Input username.........................................................skipped
+And Input Invalid Password..................................................skipped
+And user login button click.................................................skipped
+Then user get error message.................................................skipped
+]]></failure>
+</testcase>
+<testcase classname="Log in to the application" name="locked out user Login" time="0.001">
+<failure message="The scenario has pending or undefined step(s)" type="java.lang.Exception"><![CDATA[Given user is on login page.................................................undefined
+When Input username locked out user.........................................skipped
+And Input password locked out user..........................................skipped
+And user login button click.................................................skipped
+Then user get alert message.................................................skipped
+]]></failure>
+</testcase>
+<testcase classname="Log in to the application" name="User checkout complete" time="0.003">
+<failure message="The scenario has pending or undefined step(s)" type="java.lang.Exception"><![CDATA[Given user already login saucedemo site.....................................undefined
+When user click add to cart button on one product or more...................skipped
+And user click cart icon on the top right side..............................skipped
+And user check shopping list product & click checkoutbutton.................skipped
+And user fill firstname in biodata form.....................................skipped
+And user fill lastname in biodata form......................................skipped
+And user fill postal code in biodata form...................................skipped
+And user click continue button..............................................skipped
+And user click the finish button............................................skipped
+Then user successfully purchased the product & user can back to inventory page.skipped
+]]></failure>
+</testcase>
+<testcase classname="Log in to the application" name="User checkout fail" time="0.002">
+<failure message="The scenario has pending or undefined step(s)" type="java.lang.Exception"><![CDATA[Given user already login saucedemo site.....................................undefined
+When user click add to cart button on one product or more...................skipped
+And user click cart icon on the top right side..............................skipped
+And user check shopping list product & click checkoutbutton.................skipped
+And user fill empty firstname in biodata form...............................skipped
+And user fill empty lastname in biodata form................................skipped
+And user fill empty postal code in biodata form.............................skipped
+And user click continue button..............................................skipped
+Then user failed to buy product & get warning message error.................skipped
+]]></failure>
+</testcase>
+<testcase classname="Log in to the application" name="User add product" time="0.001">
+<failure message="The scenario has pending or undefined step(s)" type="java.lang.Exception"><![CDATA[Given user already login saucedemo site home................................undefined
+When user click one product detail..........................................skipped
+And user click add to cart..................................................skipped
+Then user success add product...............................................skipped
+]]></failure>
+</testcase>
+</testsuite>
